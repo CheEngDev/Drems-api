@@ -1,0 +1,38 @@
+const express = require("express");
+const patients = require("../routes/patients");
+const procedures = require("../routes/procedures");
+const users = require("../routes/users");
+const treatmentrecs = require("../routes/treatmentrecs");
+const auth = require("../routes/auth");
+const payments = require("../routes/payments");
+const finances = require("../routes/finances");
+const appointments = require("../routes/appointments");
+const hmos = require("../routes/hmos");
+const otherexpese = require("../routes/expensesOthers");
+const salaryexpense = require("../routes/expensesSalary");
+const error = require("../middleware/error");
+const pxphotos = require("../routes/pxphotos");
+const assocDents = require("../routes/assocdents");
+const helmet = require("helmet");
+const cors = require("cors");
+
+module.exports = function (app) {
+  app.use(cors());
+  app.use(express.json());
+  app.use(helmet());
+  app.use(express.urlencoded({ extended: true }));
+  app.use("/api/patients", patients);
+  app.use("/api/procedures", procedures);
+  app.use("/api/users", users);
+  app.use("/api/auth", auth);
+  app.use("/api/treatmentrecords", treatmentrecs);
+  app.use("/api/payments", payments);
+  app.use("/api/finances", finances);
+  app.use("/api/appointments", appointments);
+  app.use("/api/hmos", hmos);
+  app.use("/api/otherexpense", otherexpese);
+  app.use("/api/salaries", salaryexpense);
+  app.use("/api/associates", assocDents);
+  app.use("/api/pxphotos", pxphotos);
+  app.use(error);
+};
