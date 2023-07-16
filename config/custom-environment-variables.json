@@ -1,3 +1,4 @@
 {
-  "jwtPrivateKey": "Drems_jwtPrivateKey"
+  "jwtPrivateKey": "Drems_jwtPrivateKey",
+  "db": "drems_db"
 }
