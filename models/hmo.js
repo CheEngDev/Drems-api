@@ -17,6 +17,10 @@ const hmoSchema = new mongoose.Schema({
     minlength: 11,
     maxlength: 11,
   },
+  date: {
+    type: Date,
+    default: Date.now,
+  },
 });
 
 const Hmo = mongoose.model("Hmo", hmoSchema);

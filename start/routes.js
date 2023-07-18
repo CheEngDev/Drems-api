@@ -10,6 +10,8 @@ const appointments = require("../routes/appointments");
 const hmos = require("../routes/hmos");
 const otherexpese = require("../routes/expensesOthers");
 const salaryexpense = require("../routes/expensesSalary");
+const profpic = require("../routes/profpics");
+const pxpic = require("../routes/pxpics");
 const error = require("../middleware/error");
 const pxphotos = require("../routes/pxphotos");
 const assocDents = require("../routes/assocdents");
@@ -34,5 +36,8 @@ module.exports = function (app) {
   app.use("/api/salaries", salaryexpense);
   app.use("/api/associates", assocDents);
   app.use("/api/pxphotos", pxphotos);
+  app.use("/api/patients", patients);
+  app.use("/api/profpic", profpic);
+  app.use("/api/pxpic", pxpic);
   app.use(error);
 };
